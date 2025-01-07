@@ -1,9 +1,9 @@
 name: Theme Deploy
 
-on: 
+on:
   push:
     branches:
-      - master
+      - staging
 
 jobs:
   deploy:
@@ -21,9 +21,9 @@ jobs:
       # Step 3: Upload theme
       - name: Upload Theme to Shopify
         env:
-          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
-          SHOPIFY_THEME_ID: ${{ secrets.SHOPIFY_THEME_ID }}
-          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STAGING_STORE }}
+          SHOPIFY_THEME_ID: ${{ secrets.SHOPIFY_STAGING_THEME_ID }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_STAGING_CLI_THEME_TOKEN }}
         run: |
           shopify theme push \
             --theme $SHOPIFY_THEME_ID \
