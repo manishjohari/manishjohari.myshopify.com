@@ -54,4 +54,5 @@ jobs:
             --theme $SHOPIFY_THEME_ID \
             --store $SHOPIFY_STORE \
             --password $SHOPIFY_CLI_THEME_TOKEN \
+            -a \
             --json
